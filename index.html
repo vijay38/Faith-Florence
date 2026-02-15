@@ -1,238 +1,657 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Faith Florence – Healthcare Growth & Branding Partner</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Faith Florence</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
-:root {
-  --primary: #1E3A8A;
-  --secondary: #0EA5E9;
-  --light: #f8fafc;
-  --dark: #111827;
-  --gray: #6b7280;
+:root{
+  --primary:#1E3A8A;
+  --secondary:#0EA5E9;
+  --dark:#0f172a;
+  --light:#f8fafc;
+  --gray:#64748b;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{background:var(--light);color:var(--dark);scroll-behavior:smooth}
+
+/* HEADER */
+header{
+  position:sticky;
+  top:0;
+  padding:15px 8%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  z-index:1000;
+
+  background:linear-gradient(135deg, rgba(30,58,138,0.95), rgba(14,165,233,0.95));
+  backdrop-filter:blur(8px);
 }
 
-body {
-  background: var(--light);
-  color: var(--dark);
-  line-height: 1.6;
+
+.logo h2{
+  color:#ffffff;
 }
 
-/* Header */
-header {
-  background: white;
-  padding: 15px 8%;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+nav a{
+  color:#ffffff;
+  font-weight:500;
 }
 
-header img {
-  height: 45px;
+nav a:hover{
+  color:#e0f2fe;
 }
 
-nav ul {
-  display: flex;
-  list-style: none;
-  gap: 30px;
+.menu-toggle{
+  color:#ffffff;
 }
 
-nav a {
-  text-decoration: none;
-  color: var(--dark);
-  font-weight: 500;
-  transition: 0.3s;
+
+.logo{display:flex;align-items:center;gap:10px;}
+.logo img{height:40px;}
+
+nav ul{list-style:none;display:flex;gap:30px;}
+nav a{text-decoration:none;}
+
+
+.menu-toggle{display:none;font-size:26px;cursor:pointer;}
+
+.logo h2,
+nav a{
+  text-shadow:0 1px 2px rgba(0,0,0,0.2);
 }
 
-nav a:hover {
-  color: var(--secondary);
+nav a{
+  position:relative;
 }
 
-.menu-toggle {
-  display: none;
-  font-size: 28px;
-  cursor: pointer;
+nav a::after{
+  content:"";
+  position:absolute;
+  bottom:-5px;
+  left:0;
+  width:0;
+  height:2px;
+  background:#ffffff;
+  transition:0.3s ease;
 }
 
-/* Hero */
-.hero {
-  padding: 100px 8%;
-  text-align: center;
-  background: linear-gradient(to right, #1E3A8A, #0EA5E9);
-  color: white;
+nav a:hover::after{
+  width:100%;
 }
 
-.hero h1 {
-  font-size: 42px;
-  margin-bottom: 20px;
+
+
+/* HERO */
+.hero{
+  position:relative;
+  height:85vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:#fff;
+  overflow:hidden;
 }
 
-.hero p {
-  max-width: 800px;
-  margin: auto;
-  font-size: 18px;
-  opacity: 0.95;
+.hero-content{z-index:2;max-width:800px;}
+.hero h1{font-size:46px;margin-bottom:20px;}
+.hero p{font-size:18px;}
+
+.hero::after{
+  content:"";
+  position:absolute;
+  bottom:0;
+  width:100%;
+  height:150px;
+  background:linear-gradient(to top, rgba(0,0,0,0.7), transparent);
 }
 
-.btn {
-  display: inline-block;
-  margin-top: 30px;
-  padding: 12px 28px;
-  background: white;
-  color: var(--primary);
-  font-weight: 600;
-  border-radius: 30px;
-  text-decoration: none;
-  transition: 0.3s;
+.hero-bg{
+  position:absolute;
+  width:100%;
+  height:100%;
+  background-size:cover;
+  background-position:center;
+  transition:opacity 1s ease;
 }
 
-.btn:hover {
-  background: var(--dark);
-  color: white;
+.hero-toggle{
+  position:absolute;
+  top:20px;
+  right:20px;
+  background:rgba(255,255,255,0.2);
+  padding:8px 15px;
+  border-radius:20px;
+  cursor:pointer;
+  z-index:3;
+  backdrop-filter:blur(5px);
 }
 
-/* Sections */
-section {
-  padding: 80px 8%;
+/* WHY SECTION */
+.why-section{
+  padding:100px 8%;
+  background:linear-gradient(to bottom,#ffffff,#f1f5f9);
 }
 
-.section-title {
-  text-align: center;
-  margin-bottom: 50px;
+.why-container{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:35px;
 }
 
-.section-title h2 {
-  font-size: 32px;
-  margin-bottom: 10px;
+.why-card{
+  background:#fff;
+  padding:35px 30px;
+  border-radius:20px;
+  text-align:left;
+  box-shadow:0 15px 40px rgba(0,0,0,0.05);
+  transition:0.4s ease;
+  border:2px solid transparent;
+  position:relative;
+  overflow:hidden;
 }
 
-.section-title p {
-  color: var(--gray);
+.why-card:hover{
+  transform:translateY(-10px);
+  border-color:var(--secondary);
+  box-shadow:0 25px 60px rgba(0,0,0,0.08);
 }
 
-/* Grid */
-.grid {
-  display: grid;
-  gap: 30px;
+.why-icon{
+  font-size:28px;
+  margin-bottom:18px;
+  width:55px;
+  height:55px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:rgba(14,165,233,0.1);
+  border-radius:12px;
 }
 
-.grid-2 {
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+.why-card h3{
+  font-size:18px;
+  margin-bottom:12px;
+  color:var(--primary);
 }
 
-.card {
-  background: white;
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-  transition: 0.3s;
+.why-card p{
+  font-size:14px;
+  color:var(--gray);
+  line-height:1.7;
 }
 
-.card:hover {
-  transform: translateY(-5px);
+
+/* ABOUT SECTION */
+.about-section{
+  padding:100px 8%;
+  background:#ffffff;
 }
 
-/* Founders */
-.founder img {
-  width: 100%;
-  border-radius: 12px;
-  margin-bottom: 15px;
+.about-container{
+  display:flex;
+  align-items:center;
+  gap:60px;
+  max-width:1200px;
+  margin:auto;
 }
 
-/* Portfolio */
-.portfolio-item img {
-  width: 100%;
-  border-radius: 12px;
-  margin-bottom: 15px;
+.about-content{
+  flex:1;
 }
 
-/* Clients */
-.clients {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
+.about-tag{
+  display:inline-block;
+  background:rgba(14,165,233,0.1);
+  color:var(--secondary);
+  padding:6px 14px;
+  border-radius:20px;
+  font-size:13px;
+  font-weight:600;
+  margin-bottom:15px;
 }
 
-.clients div {
-  background: white;
-  padding: 15px 25px;
-  border-radius: 8px;
-  font-weight: 500;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+.about-content h2{
+  font-size:36px;
+  margin-bottom:5px;
+}
+
+.about-content h4{
+  color:var(--primary);
+  font-weight:500;
+  margin-bottom:20px;
+}
+
+.about-content p{
+  color:var(--gray);
+  margin-bottom:18px;
+  line-height:1.7;
+}
+
+.about-image{
+  flex:1;
+  position:relative;
+}
+
+.about-image img{
+  width:100%;
+  border-radius:20px;
+  box-shadow:0 20px 50px rgba(0,0,0,0.08);
+}
+
+/* subtle decorative accent */
+.about-image::before{
+  content:"";
+  position:absolute;
+  top:-20px;
+  left:-20px;
+  width:100%;
+  height:100%;
+  border-radius:20px;
+  background:linear-gradient(135deg, var(--primary), var(--secondary));
+  z-index:-1;
+}
+
+/* FOUNDERS SECTION */
+.founders-section{
+  padding:100px 8%;
+  background:linear-gradient(to bottom, #f8fafc, #ffffff);
+}
+
+.founders-container{
+  display:flex;
+  justify-content:center;
+  gap:60px;
+  flex-wrap:wrap;
+  max-width:1100px;
+  margin:auto;
+}
+
+.founder-card{
+  background:#ffffff;
+  padding:40px 30px;
+  border-radius:20px;
+  text-align:center;
+  max-width:400px;
+  box-shadow:0 20px 50px rgba(0,0,0,0.05);
+  transition:0.3s ease;
+}
+
+.founder-card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 25px 60px rgba(0,0,0,0.08);
+}
+
+.founder-image{
+  position:relative;
+  width:200px;
+  height:200px;
+  margin:0 auto 25px;
+}
+
+.founder-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:50%;
+  position:relative;
+  z-index:2;
+}
+
+/* Gradient ring effect */
+.founder-image::before{
+  content:"";
+  position:absolute;
+  top:-6px;
+  left:-6px;
+  width:212px;
+  height:212px;
+  border-radius:50%;
+  background:linear-gradient(135deg, var(--primary), var(--secondary));
+  z-index:1;
+}
+
+.founder-card h3{
+  font-size:22px;
+  margin-bottom:8px;
+}
+
+.founder-role{
+  display:block;
+  font-size:14px;
+  font-weight:500;
+  color:var(--secondary);
+  margin-bottom:15px;
+}
+
+.founder-card p{
+  color:var(--gray);
+  font-size:14px;
+  line-height:1.7;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .founders-container{
+    gap:40px;
+  }
+
+  .founder-card{
+    padding:30px 20px;
+  }
+}
+
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .about-container{
+    flex-direction:column;
+  }
+
+  .about-image::before{
+    display:none;
+  }
+
+  .about-content h2{
+    font-size:30px;
+  }
+}
+
+/* SECTIONS */
+section{padding:80px 8%;}
+.section-title{text-align:center;margin-bottom:50px;}
+.section-title h2{font-size:32px;margin-bottom:10px;}
+.section-title p{color:var(--gray);}
+
+/* SERVICES SECTION */
+.services-section{
+  padding:100px 8%;
+  background:linear-gradient(to bottom, #f8fafc, #ffffff);
+}
+
+.services-container{
+  display:flex;
+  gap:60px;
+  max-width:1200px;
+  margin:auto;
+}
+
+.services-left{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+
+.service-item{
+  background:#ffffff;
+  padding:20px 25px;
+  border-radius:14px;
+  border:2px solid #e5e7eb;
+  cursor:pointer;
+  transition:all 0.3s ease;
+  position:relative;
+  overflow:hidden;
+}
+
+.service-item::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  height:100%;
+  width:5px;
+  background:var(--secondary);
+  transform:scaleY(0);
+  transition:0.3s ease;
+}
+
+.service-item:hover{
+  transform:translateX(6px);
+  border-color:var(--secondary);
+}
+
+.service-item.active{
+  background:var(--primary);
+  color:#ffffff;
+  border-color:var(--primary);
+  transform:translateX(12px);
+}
+
+.service-item.active::before{
+  transform:scaleY(1);
+}
+
+.service-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.service-title{
+  font-weight:600;
+  font-size:16px;
+}
+
+.service-arrow{
+  transition:0.3s ease;
+}
+
+.service-item.active .service-arrow{
+  transform:rotate(90deg);
+}
+
+/* Right Panel */
+.services-right{
+  flex:1.2;
+}
+
+.service-display{
+  background:#ffffff;
+  padding:40px;
+  border-radius:20px;
+  box-shadow:0 20px 50px rgba(0,0,0,0.05);
+  min-height:250px;
+  transition:0.3s ease;
+}
+
+.service-display h3{
+  margin-bottom:15px;
+}
+
+.service-display p{
+  color:var(--gray);
+  line-height:1.7;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+
+  .services-container{
+    flex-direction:column;
+  }
+
+  .services-right{
+    display:none; /* Hide desktop panel */
+  }
+
+  .service-content-mobile{
+    margin-top:15px;
+    padding:15px;
+    background:#f1f5f9;
+    border-radius:12px;
+    font-size:14px;
+    line-height:1.6;
+    color:#334155;
+  }
+
+}
+
+
+/* PORTFOLIO */
+.portfolio-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:25px;
+}
+
+.portfolio-item{
+  position:relative;
+  overflow:hidden;
+  border-radius:15px;
+  transition:0.3s ease;
+}
+
+.portfolio-item img{
+  width:100%;
+  height:240px;
+  object-fit:cover;
+  transition:0.4s ease;
+}
+
+/* Always visible overlay */
+.portfolio-overlay{
+  position:absolute;
+  bottom:0;
+  width:100%;
+  padding:20px;
+  color:#fff;
+  background:linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.3), transparent);
+  font-weight:500;
+  font-size:15px;
+  transition:0.3s ease;
+
+}
+
+/* Premium hover effect */
+.portfolio-item:hover{
+  transform:translateY(-8px);
+}
+
+.portfolio-item:hover img{
+  transform:scale(1.08);
+}
+
+
+.portfolio-item:hover .portfolio-overlay{
+  opacity:1;
 }
 
 /* CTA */
-.cta {
-  background: var(--primary);
-  color: white;
-  text-align: center;
-  padding: 70px 8%;
+.cta{
+  background:var(--primary);
+  color:#fff;
+  text-align:center;
+  padding:70px 8%;
 }
 
-/* Footer */
-footer {
-  background: var(--dark);
-  color: white;
-  padding: 40px 8%;
+/* CLIENTS SECTION */
+.clients-section{
+  padding:100px 8%;
+  background:#ffffff;
 }
 
-.footer-grid {
-  display: grid;
-  gap: 30px;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+.clients-container{
+  max-width:1100px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:35px;
 }
 
-footer a {
-  color: #9ca3af;
-  text-decoration: none;
+.client-card{
+  background:#fff;
+  padding:35px 30px;
+  border-radius:20px;
+  box-shadow:0 15px 40px rgba(0,0,0,0.05);
+  transition:0.4s ease;
+  text-align:left;
+  border:2px solid transparent;
 }
 
-footer a:hover {
-  color: white;
+.client-card:hover{
+  transform:translateY(-10px);
+  border-color:var(--secondary);
+  box-shadow:0 25px 60px rgba(0,0,0,0.08);
 }
 
-/* Responsive */
-@media(max-width: 768px) {
-  nav ul {
-    display: none;
-    flex-direction: column;
-    background: white;
-    position: absolute;
-    top: 70px;
-    right: 8%;
-    padding: 20px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+.client-logo{
+  width:120px;
+  height:70px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-bottom:20px;
+  border-radius:12px;
+  padding:10px;
+}
+
+.client-logo img{
+  max-width:100%;
+  max-height:100%;
+  object-fit:contain;
+}
+
+
+.client-card h3{
+  font-size:16px;
+  margin-bottom:12px;
+  color:var(--primary);
+}
+
+.client-card p{
+  font-size:14px;
+  color:var(--gray);
+  line-height:1.7;
+}
+
+
+/* FOOTER */
+footer{
+  background:var(--dark);
+  color:#fff;
+  padding:40px 8%;
+  text-align:center;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .services-wrapper{flex-direction:column;}
+}
+
+@media(max-width:768px){
+  nav ul{
+    display:none;
+    position:absolute;
+    right:8%;
+    top:70px;
+    flex-direction:column;
+    background:#fff;
+    padding:20px;
+    box-shadow:0 10px 20px rgba(0,0,0,0.1);
   }
-
-  nav ul.active {
-    display: flex;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
+  nav ul.active{display:flex;}
+  .menu-toggle{display:block;}
 }
 </style>
 </head>
 <body>
 
 <header>
-  <img src="assets/logo.png" alt="Faith Florence Logo">
+  <div class="logo">
+    <img src="assets/logo.png">
+    <h2>Faith Florence</h2>
+  </div>
+
   <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
   <nav>
     <ul id="navLinks">
       <li><a href="#about">About</a></li>
@@ -243,80 +662,282 @@ footer a:hover {
   </nav>
 </header>
 
+<!-- HERO -->
 <section class="hero">
-  <h1>Faith Florence</h1>
-  <p>A Healthcare Growth & Branding Partner helping hospitals build visibility, patient trust, and sustainable growth through strategic marketing and creative excellence.</p>
-  <a href="#contact" class="btn">Let’s Build Together</a>
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-toggle" onclick="toggleHeroMode()">Switch Mode</div>
+  <div class="hero-content">
+    <h1>A Healthcare Growth & Branding Partner</h1>
+    <p>Helping hospitals enhance visibility, strengthen patient engagement, and build lasting brand trust through strategic marketing and creative excellence.</p>
+  </div>
 </section>
 
-<section id="about">
+<section id="founders" class="founders-section">
   <div class="section-title">
-    <h2>About Us</h2>
+    <h2>Meet The Founders</h2>
+    <p>Leadership driven by healthcare expertise and strategic execution</p>
   </div>
-  <p style="max-width:900px;margin:auto;text-align:center;">
-    Faith Florence is a healthcare-focused branding and digital marketing partner dedicated to helping hospitals and healthcare institutions enhance visibility, strengthen patient engagement, and build lasting brand trust through strategic campaigns and creative execution.
-  </p>
-</section>
 
-<section>
-  <div class="section-title">
-    <h2>Our Founders</h2>
-  </div>
-  <div class="grid grid-2">
-    <div class="card founder">
-      <img src="https://via.placeholder.com/500x400" alt="Prasad Thamadapalli">
+  <div class="founders-container">
+
+    <div class="founder-card">
+      <div class="founder-image">
+        <img src="assets/Founder.png" alt="Prasad Thamadapalli">
+      </div>
       <h3>Prasad Thamadapalli</h3>
-      <p>Founder & Brand Strategist with deep expertise in corporate hospital marketing and large-scale campaign execution.</p>
+      <span class="founder-role">Founder & Brand Strategist</span>
+      <p>
+        With hands-on experience in corporate hospital marketing, Prasad brings
+        deep healthcare industry understanding, strategic clarity, and practical
+        campaign execution expertise to every partnership.
+      </p>
     </div>
-    <div class="card founder">
-      <img src="https://via.placeholder.com/500x400" alt="Rechal Thamadapalli">
+
+    <div class="founder-card">
+      <div class="founder-image">
+        <img src="assets/Founder.png" alt="Rechal Thamadapalli">
+      </div>
       <h3>Rechal Thamadapalli</h3>
-      <p>Co-Founder & CRM, Sales & Digital Marketer driving patient engagement and digital growth strategies.</p>
+      <span class="founder-role">Co-Founder & CRM, Sales & Digital Marketer</span>
+      <p>
+        Rechal specializes in patient engagement strategy, CRM systems,
+        digital growth campaigns, and performance-driven marketing
+        initiatives tailored specifically for healthcare institutions.
+      </p>
     </div>
+
   </div>
 </section>
 
-<section id="services">
+
+<section id="about" class="about-section">
+  <div class="about-container">
+
+    <div class="about-content">
+      <span class="about-tag">About Us</span>
+      <h2>Faith Florence</h2>
+      <h4>A Healthcare Growth & Branding Partner</h4>
+
+      <p>
+        Faith Florence is a healthcare-focused branding and digital marketing partner 
+        dedicated to helping hospitals, clinics, and healthcare institutions enhance visibility, 
+        strengthen patient engagement, and build lasting brand trust through strategic campaigns, 
+        compelling creative, and comprehensive digital marketing solutions.
+      </p>
+
+      <p>
+        Founded by an experienced healthcare brand strategist with hands-on expertise in 
+        corporate hospital marketing, Faith Florence brings deep industry insight and 
+        practical execution to every partnership.
+      </p>
+
+    </div>
+
+    <div class="about-image">
+      <img src="assets/About-us.png" alt="Healthcare Branding">
+    </div>
+
+  </div>
+</section>
+
+<section id="why-choose" class="why-section">
+  <div class="section-title">
+    <h2>Why Choose Faith Florence?</h2>
+    <p>Built exclusively for healthcare. Designed for measurable growth.</p>
+  </div>
+
+  <div class="why-container">
+
+    <div class="why-card">
+      <div class="why-icon">🏥</div>
+      <h3>Healthcare-Focused Expertise</h3>
+      <p>
+        We understand hospital ecosystems — from NABH messaging and
+        patient communication to doctor branding and specialty promotion.
+        Our strategies are built specifically for healthcare institutions.
+      </p>
+    </div>
+
+    <div class="why-card">
+      <div class="why-icon">🎯</div>
+      <h3>Strategy-First Approach</h3>
+      <p>
+        Every campaign, creative, or digital initiative is aligned with
+        a clear marketing objective. We build strategy first — design follows purpose.
+      </p>
+    </div>
+
+    <div class="why-card">
+      <div class="why-icon">📊</div>
+      <h3>On-Ground Hospital Experience</h3>
+      <p>
+        Hands-on experience with multi-specialty hospitals and large-scale
+        health campaigns gives us real operational insight — not assumptions.
+      </p>
+    </div>
+
+    <div class="why-card">
+      <div class="why-icon">🚀</div>
+      <h3>Performance + Creative Balance</h3>
+      <p>
+        We combine emotionally compelling storytelling with performance-driven
+        marketing methods to ensure branding delivers measurable growth.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- SERVICES -->
+<section id="services" class="services-section">
   <div class="section-title">
     <h2>Our Services</h2>
+    <p>Comprehensive healthcare branding & growth solutions</p>
   </div>
-  <div class="grid grid-2">
-    <div class="card"><h3>Hospital Branding & Identity</h3></div>
-    <div class="card"><h3>Digital Marketing Support</h3></div>
-    <div class="card"><h3>Creative Production</h3></div>
-    <div class="card"><h3>Marketing Campaign Development</h3></div>
-    <div class="card"><h3>Facility Branding</h3></div>
-    <div class="card"><h3>Community Outreach</h3></div>
+
+  <div class="services-container">
+
+    <div class="services-left" id="servicesLeft">
+      <!-- Services will be injected by JS -->
+    </div>
+
+    <!-- <div class="services-right" id="servicesRight">
+      <div class="service-display">
+        <h3>Strategic Healthcare Solutions</h3>
+        <p>
+          Select a service to explore how Faith Florence can elevate
+          your hospital’s brand, patient engagement and growth strategy.
+        </p>
+      </div>
+    </div> -->
+
   </div>
 </section>
 
+
+<!-- PORTFOLIO -->
 <section id="portfolio">
   <div class="section-title">
-    <h2>Portfolio Highlights</h2>
+    <h2>Portfolio</h2>
   </div>
-  <div class="grid grid-2">
-    <div class="card portfolio-item">
-      <img src="https://via.placeholder.com/600x400" alt="">
-      <p>Naatho Unna Apollo – 37 Years Celebration</p>
+
+  <div class="portfolio-grid">
+
+    <div class="portfolio-item">
+      <img src="assets/natho-una-apollo.jpg" alt="">
+      <div class="portfolio-overlay">
+        Naatho Unna Apollo – 37 Years Celebration
+      </div>
     </div>
-    <div class="card portfolio-item">
-      <img src="https://via.placeholder.com/600x400" alt="">
-      <p>Apollo Jubilee Hills Metro Branding</p>
+
+    <div class="portfolio-item">
+      <img src="assets/Apollo-metro-rail-branding.avif" alt="">
+      <div class="portfolio-overlay">
+        Apollo Jubilee Hills Metro Retail Branding
+      </div>
     </div>
+
+    <div class="portfolio-item">
+      <img src="assets/apollo-hyderguda.avif" alt="">
+      <div class="portfolio-overlay">
+        Revamp of Apollo Hospitals Hyderguda
+      </div>
+    </div>
+
+    <div class="portfolio-item">
+      <img src="assets/apollo-medical-center.jpg" alt="">
+      <div class="portfolio-overlay">
+        Apollo Medical Centre – Hyderabad Airport
+      </div>
+    </div>
+
+    <div class="portfolio-item">
+      <img src="assets/Doctors-day.jpg" alt="">
+      <div class="portfolio-overlay">
+        Doctor’s Day Celebrations
+      </div>
+    </div>
+
+    <div class="portfolio-item">
+      <img src="assets/hepatitis.jpg" alt="">
+      <div class="portfolio-overlay">
+        World Hepatitis Day 2023
+      </div>
+    </div>
+
+    <div class="portfolio-item">
+      <img src="assets/pink defenders.jpg" alt="">
+      <div class="portfolio-overlay">
+        Pink Defender Breast Cancer Awareness Walk
+      </div>
+    </div>
+
+    <div class="portfolio-item">
+      <img src="assets/Sage.jpg" alt="">
+      <div class="portfolio-overlay">
+        World Heart Day Campaign
+      </div>
+    </div>
+
   </div>
 </section>
 
-<section>
+<section id="clients" class="clients-section">
   <div class="section-title">
-    <h2>Our Clients</h2>
+    <h2>Trusted By Leading Healthcare Institutions</h2>
+    <p>Strategic branding partnerships across hospitals and specialty care centers.</p>
   </div>
-  <div class="clients">
-    <div>Apollo Hospitals Hyderabad</div>
-    <div>Dharani Hospitals</div>
-    <div>KK SWARA Super Speciality</div>
-    <div>Hegde Fertility</div>
+
+  <div class="clients-container">
+
+    <div class="client-card">
+      <div class="client-logo">
+        <img src="assets/Apollo_Hospitals_Logo.svg.png" alt="Apollo Hospitals Logo">
+      </div>
+      <h3>Apollo Hospitals – Hyderabad</h3>
+      <p>
+        Delivered milestone celebration campaigns, metro retail branding,
+        facility revamps, and large-scale awareness initiatives.
+      </p>
+    </div>
+
+    <div class="client-card">
+      <div class="client-logo">
+        <img src="assets/Dharani-hospital.webp" alt="Dharani Hospitals Logo">
+      </div>
+      <h3>Dharani Hospitals – Sangareddy</h3>
+      <p>
+        Supported regional brand positioning and localized health outreach
+        initiatives to strengthen community presence.
+      </p>
+    </div>
+
+    <div class="client-card">
+      <div class="client-logo">
+        <img src="assets/KK-Swara.webp" alt="KK Swara Logo">
+      </div>
+      <h3>KK SWARA Super Speciality – Boduppal</h3>
+      <p>
+        Developed service communication strategies and campaign execution
+        for specialty-focused patient engagement.
+      </p>
+    </div>
+
+    <div class="client-card">
+      <div class="client-logo">
+        <img src="assets/Hegde-fertility.png" alt="Hegde-fertility">
+      </div>
+      <h3>Hegde Fertility – Madhapur</h3>
+      <p>
+        Enhanced digital visibility and creative communication strategies
+        tailored for fertility care branding.
+      </p>
+    </div>
+
   </div>
 </section>
+
 
 <section class="cta" id="contact">
   <h2>Let’s Build Your Hospital’s Brand Together</h2>
@@ -325,30 +946,124 @@ footer a:hover {
 </section>
 
 <footer>
-  <div class="footer-grid">
-    <div>
-      <h3>Faith Florence</h3>
-      <p>Healthcare Growth & Branding Partner</p>
-    </div>
-    <div>
-      <h4>Navigation</h4>
-      <a href="#about">About</a><br>
-      <a href="#services">Services</a><br>
-      <a href="#portfolio">Portfolio</a>
-    </div>
-    <div>
-      <h4>Contact</h4>
-      <p>xxxxxxxxxx@gmail.com</p>
-      <p>+91 8919231767</p>
-    </div>
-  </div>
-  <p style="text-align:center;margin-top:30px;color:#9ca3af;">© 2026 Faith Florence. All rights reserved.</p>
+  <p>© 2026 Faith Florence. All rights reserved.</p>
 </footer>
 
 <script>
-function toggleMenu() {
-  document.getElementById("navLinks").classList.toggle("active");
+function toggleMenu(){
+ document.getElementById("navLinks").classList.toggle("active");
 }
+
+/* HERO TOGGLE WITH LOCALSTORAGE */
+const heroBg=document.getElementById("heroBg");
+let images=[
+"assets/Doctors-day.jpg",
+"assets/Apollo-metro-rail-branding.avif",
+"assets/natho-una-apollo.avif"
+];
+
+let current=0;
+let mode=localStorage.getItem("heroMode") || "slideshow";
+
+function setHero(){
+ if(mode==="static"){
+  heroBg.style.background="linear-gradient(to right, #1E3A8A, #0EA5E9)";
+ }else{
+  heroBg.style.backgroundImage=`url(${images[current]})`;
+ }
+}
+setHero();
+
+setInterval(()=>{
+ if(mode==="slideshow"){
+  current=(current+1)%images.length;
+  heroBg.style.backgroundImage=`url(${images[current]})`;
+ }
+},4000);
+
+function toggleHeroMode(){
+ mode=(mode==="slideshow")?"static":"slideshow";
+ localStorage.setItem("heroMode",mode);
+ location.reload();
+}
+
+/* SERVICES DATA */
+const servicesData = [
+{
+title:"Hospital Branding & Identity",
+desc:"Brand positioning strategy, hospital brand architecture, service line branding (Cardiology, Oncology, etc.), doctor personal branding, rebranding & revamp, visual identity systems."
+},
+{
+title:"Digital Marketing Support",
+desc:"Social media strategy & management, reels & YouTube Shorts, paid campaign creatives, WhatsApp marketing creatives, Google My Business optimization creatives, festival & health day campaigns."
+},
+{
+title:"Creative Production",
+desc:"Awareness reels, patient testimonial storytelling, doctor introduction videos, health education short videos, campaign concept development."
+},
+{
+title:"Marketing Campaign Development",
+desc:"Launch campaigns, preventive health campaigns, seasonal health campaigns, mega health camp promotions, CSR & community engagement creatives."
+},
+{
+title:"Facility Branding & Experience Design",
+desc:"In-hospital branding, OPD zone branding, signage system revamp, standee & kiosk design, patient journey visual communication."
+},
+{
+title:"RWA & Community Outreach Support",
+desc:"Residential health camp branding, awareness drives, apartment association collaborations, local activation creatives."
+}
+];
+
+const servicesLeft = document.getElementById("servicesLeft");
+const servicesRight = document.getElementById("servicesRight");
+
+servicesData.forEach((service,index)=>{
+
+  const item = document.createElement("div");
+  item.className="service-item";
+
+  item.innerHTML=`
+    <div class="service-header">
+      <span class="service-title">${service.title}</span>
+      <span class="service-arrow">➜</span>
+    </div>
+  `;
+
+  item.onclick = function(){
+
+    document.querySelectorAll(".service-item").forEach(el=>{
+      el.classList.remove("active");
+
+      // Remove mobile content
+      const mobileContent = el.querySelector(".service-content-mobile");
+      if(mobileContent) mobileContent.remove();
+    });
+
+    item.classList.add("active");
+
+    // Desktop panel update
+    // if(window.innerWidth > 900){
+    //   servicesRight.innerHTML=`
+    //     <div class="service-display">
+    //       <h3>${service.title}</h3>
+    //       <p>${service.desc}</p>
+    //     </div>
+    //   `;
+    // }else{
+      // Mobile: insert content below selected item
+      const mobileContent = document.createElement("div");
+      mobileContent.className="service-content-mobile";
+      mobileContent.innerText = service.desc;
+      item.appendChild(mobileContent);
+    // }
+
+  };
+
+  servicesLeft.appendChild(item);
+
+});
+
 </script>
 
 </body>
