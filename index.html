@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Faith Florence – Healthcare Growth & Branding Partner</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --primary: #1E3A8A;
+  --secondary: #0EA5E9;
+  --light: #f8fafc;
+  --dark: #111827;
+  --gray: #6b7280;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: var(--light);
+  color: var(--dark);
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  background: white;
+  padding: 15px 8%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header img {
+  height: 45px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--dark);
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: var(--secondary);
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* Hero */
+.hero {
+  padding: 100px 8%;
+  text-align: center;
+  background: linear-gradient(to right, #1E3A8A, #0EA5E9);
+  color: white;
+}
+
+.hero h1 {
+  font-size: 42px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  max-width: 800px;
+  margin: auto;
+  font-size: 18px;
+  opacity: 0.95;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 12px 28px;
+  background: white;
+  color: var(--primary);
+  font-weight: 600;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: var(--dark);
+  color: white;
+}
+
+/* Sections */
+section {
+  padding: 80px 8%;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-title h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.section-title p {
+  color: var(--gray);
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  gap: 30px;
+}
+
+.grid-2 {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.card {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Founders */
+.founder img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+/* Portfolio */
+.portfolio-item img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+/* Clients */
+.clients {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.clients div {
+  background: white;
+  padding: 15px 25px;
+  border-radius: 8px;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* CTA */
+.cta {
+  background: var(--primary);
+  color: white;
+  text-align: center;
+  padding: 70px 8%;
+}
+
+/* Footer */
+footer {
+  background: var(--dark);
+  color: white;
+  padding: 40px 8%;
+}
+
+.footer-grid {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+footer a {
+  color: #9ca3af;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: white;
+}
+
+/* Responsive */
+@media(max-width: 768px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background: white;
+    position: absolute;
+    top: 70px;
+    right: 8%;
+    padding: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <img src="assets/logo.png" alt="Faith Florence Logo">
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+  <nav>
+    <ul id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Faith Florence</h1>
+  <p>A Healthcare Growth & Branding Partner helping hospitals build visibility, patient trust, and sustainable growth through strategic marketing and creative excellence.</p>
+  <a href="#contact" class="btn">Let’s Build Together</a>
+</section>
+
+<section id="about">
+  <div class="section-title">
+    <h2>About Us</h2>
+  </div>
+  <p style="max-width:900px;margin:auto;text-align:center;">
+    Faith Florence is a healthcare-focused branding and digital marketing partner dedicated to helping hospitals and healthcare institutions enhance visibility, strengthen patient engagement, and build lasting brand trust through strategic campaigns and creative execution.
+  </p>
+</section>
+
+<section>
+  <div class="section-title">
+    <h2>Our Founders</h2>
+  </div>
+  <div class="grid grid-2">
+    <div class="card founder">
+      <img src="https://via.placeholder.com/500x400" alt="Prasad Thamadapalli">
+      <h3>Prasad Thamadapalli</h3>
+      <p>Founder & Brand Strategist with deep expertise in corporate hospital marketing and large-scale campaign execution.</p>
+    </div>
+    <div class="card founder">
+      <img src="https://via.placeholder.com/500x400" alt="Rechal Thamadapalli">
+      <h3>Rechal Thamadapalli</h3>
+      <p>Co-Founder & CRM, Sales & Digital Marketer driving patient engagement and digital growth strategies.</p>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="section-title">
+    <h2>Our Services</h2>
+  </div>
+  <div class="grid grid-2">
+    <div class="card"><h3>Hospital Branding & Identity</h3></div>
+    <div class="card"><h3>Digital Marketing Support</h3></div>
+    <div class="card"><h3>Creative Production</h3></div>
+    <div class="card"><h3>Marketing Campaign Development</h3></div>
+    <div class="card"><h3>Facility Branding</h3></div>
+    <div class="card"><h3>Community Outreach</h3></div>
+  </div>
+</section>
+
+<section id="portfolio">
+  <div class="section-title">
+    <h2>Portfolio Highlights</h2>
+  </div>
+  <div class="grid grid-2">
+    <div class="card portfolio-item">
+      <img src="https://via.placeholder.com/600x400" alt="">
+      <p>Naatho Unna Apollo – 37 Years Celebration</p>
+    </div>
+    <div class="card portfolio-item">
+      <img src="https://via.placeholder.com/600x400" alt="">
+      <p>Apollo Jubilee Hills Metro Branding</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-title">
+    <h2>Our Clients</h2>
+  </div>
+  <div class="clients">
+    <div>Apollo Hospitals Hyderabad</div>
+    <div>Dharani Hospitals</div>
+    <div>KK SWARA Super Speciality</div>
+    <div>Hegde Fertility</div>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <h2>Let’s Build Your Hospital’s Brand Together</h2>
+  <p>Email: xxxxxxxxxx@gmail.com | +91 8919231767 | +91 9502038009</p>
+  <p>Based in Hyderabad – Serving PAN India</p>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <h3>Faith Florence</h3>
+      <p>Healthcare Growth & Branding Partner</p>
+    </div>
+    <div>
+      <h4>Navigation</h4>
+      <a href="#about">About</a><br>
+      <a href="#services">Services</a><br>
+      <a href="#portfolio">Portfolio</a>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <p>xxxxxxxxxx@gmail.com</p>
+      <p>+91 8919231767</p>
+    </div>
+  </div>
+  <p style="text-align:center;margin-top:30px;color:#9ca3af;">© 2026 Faith Florence. All rights reserved.</p>
+</footer>
+
+<script>
+function toggleMenu() {
+  document.getElementById("navLinks").classList.toggle("active");
+}
+</script>
+
+</body>
+</html>
