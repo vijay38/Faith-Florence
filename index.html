@@ -6,647 +6,13 @@
 <title>Faith Florence</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-<style>
-:root{
-  --primary:#1E3A8A;
-  --secondary:#0EA5E9;
-  --dark:#0f172a;
-  --light:#f8fafc;
-  --gray:#64748b;
-}
-
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
-body{background:var(--light);color:var(--dark);scroll-behavior:smooth}
-
-/* HEADER */
-header{
-  position:sticky;
-  top:0;
-  padding:15px 8%;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  z-index:1000;
-
-  background:linear-gradient(135deg, rgba(30,58,138,0.95), rgba(14,165,233,0.95));
-  backdrop-filter:blur(8px);
-}
-
-
-.logo h2{
-  color:#ffffff;
-}
-
-nav a{
-  color:#ffffff;
-  font-weight:500;
-}
-
-nav a:hover{
-  color:#e0f2fe;
-}
-
-.menu-toggle{
-  color:#ffffff;
-}
-
-
-.logo{display:flex;align-items:center;gap:10px;}
-.logo img{height:40px;}
-
-nav ul{list-style:none;display:flex;gap:30px;}
-nav a{text-decoration:none;}
-
-
-.menu-toggle{display:none;font-size:26px;cursor:pointer;}
-
-.logo h2,
-nav a{
-  text-shadow:0 1px 2px rgba(0,0,0,0.2);
-}
-
-nav a{
-  position:relative;
-}
-
-nav a::after{
-  content:"";
-  position:absolute;
-  bottom:-5px;
-  left:0;
-  width:0;
-  height:2px;
-  background:#ffffff;
-  transition:0.3s ease;
-}
-
-nav a:hover::after{
-  width:100%;
-}
-
-
-
-/* HERO */
-.hero{
-  position:relative;
-  height:85vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  color:#fff;
-  overflow:hidden;
-}
-
-.hero-content{z-index:2;max-width:800px;}
-.hero h1{font-size:46px;margin-bottom:20px;}
-.hero p{font-size:18px;}
-
-.hero::after{
-  content:"";
-  position:absolute;
-  bottom:0;
-  width:100%;
-  height:150px;
-  background:linear-gradient(to top, rgba(0,0,0,0.7), transparent);
-}
-
-.hero-bg{
-  position:absolute;
-  width:100%;
-  height:100%;
-  background-size:cover;
-  background-position:center;
-  transition:opacity 1s ease;
-}
-
-.hero-toggle{
-  position:absolute;
-  top:20px;
-  right:20px;
-  background:rgba(255,255,255,0.2);
-  padding:8px 15px;
-  border-radius:20px;
-  cursor:pointer;
-  z-index:3;
-  backdrop-filter:blur(5px);
-}
-
-/* WHY SECTION */
-.why-section{
-  padding:100px 8%;
-  background:linear-gradient(to bottom,#ffffff,#f1f5f9);
-}
-
-.why-container{
-  max-width:1200px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:35px;
-}
-
-.why-card{
-  background:#fff;
-  padding:35px 30px;
-  border-radius:20px;
-  text-align:left;
-  box-shadow:0 15px 40px rgba(0,0,0,0.05);
-  transition:0.4s ease;
-  border:2px solid transparent;
-  position:relative;
-  overflow:hidden;
-}
-
-.why-card:hover{
-  transform:translateY(-10px);
-  border-color:var(--secondary);
-  box-shadow:0 25px 60px rgba(0,0,0,0.08);
-}
-
-.why-icon{
-  font-size:28px;
-  margin-bottom:18px;
-  width:55px;
-  height:55px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:rgba(14,165,233,0.1);
-  border-radius:12px;
-}
-
-.why-card h3{
-  font-size:18px;
-  margin-bottom:12px;
-  color:var(--primary);
-}
-
-.why-card p{
-  font-size:14px;
-  color:var(--gray);
-  line-height:1.7;
-}
-
-
-/* ABOUT SECTION */
-.about-section{
-  padding:100px 8%;
-  background:#ffffff;
-}
-
-.about-container{
-  display:flex;
-  align-items:center;
-  gap:60px;
-  max-width:1200px;
-  margin:auto;
-}
-
-.about-content{
-  flex:1;
-}
-
-.about-tag{
-  display:inline-block;
-  background:rgba(14,165,233,0.1);
-  color:var(--secondary);
-  padding:6px 14px;
-  border-radius:20px;
-  font-size:13px;
-  font-weight:600;
-  margin-bottom:15px;
-}
-
-.about-content h2{
-  font-size:36px;
-  margin-bottom:5px;
-}
-
-.about-content h4{
-  color:var(--primary);
-  font-weight:500;
-  margin-bottom:20px;
-}
-
-.about-content p{
-  color:var(--gray);
-  margin-bottom:18px;
-  line-height:1.7;
-}
-
-.about-image{
-  flex:1;
-  position:relative;
-}
-
-.about-image img{
-  width:100%;
-  border-radius:20px;
-  box-shadow:0 20px 50px rgba(0,0,0,0.08);
-}
-
-/* subtle decorative accent */
-.about-image::before{
-  content:"";
-  position:absolute;
-  top:-20px;
-  left:-20px;
-  width:100%;
-  height:100%;
-  border-radius:20px;
-  background:linear-gradient(135deg, var(--primary), var(--secondary));
-  z-index:-1;
-}
-
-/* FOUNDERS SECTION */
-.founders-section{
-  padding:100px 8%;
-  background:linear-gradient(to bottom, #f8fafc, #ffffff);
-}
-
-.founders-container{
-  display:flex;
-  justify-content:center;
-  gap:60px;
-  flex-wrap:wrap;
-  max-width:1100px;
-  margin:auto;
-}
-
-.founder-card{
-  background:#ffffff;
-  padding:40px 30px;
-  border-radius:20px;
-  text-align:center;
-  max-width:400px;
-  box-shadow:0 20px 50px rgba(0,0,0,0.05);
-  transition:0.3s ease;
-}
-
-.founder-card:hover{
-  transform:translateY(-10px);
-  box-shadow:0 25px 60px rgba(0,0,0,0.08);
-}
-
-.founder-image{
-  position:relative;
-  width:200px;
-  height:200px;
-  margin:0 auto 25px;
-}
-
-.founder-image img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  border-radius:50%;
-  position:relative;
-  z-index:2;
-}
-
-/* Gradient ring effect */
-.founder-image::before{
-  content:"";
-  position:absolute;
-  top:-6px;
-  left:-6px;
-  width:212px;
-  height:212px;
-  border-radius:50%;
-  background:linear-gradient(135deg, var(--primary), var(--secondary));
-  z-index:1;
-}
-
-.founder-card h3{
-  font-size:22px;
-  margin-bottom:8px;
-}
-
-.founder-role{
-  display:block;
-  font-size:14px;
-  font-weight:500;
-  color:var(--secondary);
-  margin-bottom:15px;
-}
-
-.founder-card p{
-  color:var(--gray);
-  font-size:14px;
-  line-height:1.7;
-}
-
-/* RESPONSIVE */
-@media(max-width:768px){
-  .founders-container{
-    gap:40px;
-  }
-
-  .founder-card{
-    padding:30px 20px;
-  }
-}
-
-
-/* RESPONSIVE */
-@media(max-width:900px){
-  .about-container{
-    flex-direction:column;
-  }
-
-  .about-image::before{
-    display:none;
-  }
-
-  .about-content h2{
-    font-size:30px;
-  }
-}
-
-/* SECTIONS */
-section{padding:80px 8%;}
-.section-title{text-align:center;margin-bottom:50px;}
-.section-title h2{font-size:32px;margin-bottom:10px;}
-.section-title p{color:var(--gray);}
-
-/* SERVICES SECTION */
-.services-section{
-  padding:100px 8%;
-  background:linear-gradient(to bottom, #f8fafc, #ffffff);
-}
-
-.services-container{
-  display:flex;
-  gap:60px;
-  max-width:1200px;
-  margin:auto;
-}
-
-.services-left{
-  flex:1;
-  display:flex;
-  flex-direction:column;
-  gap:18px;
-}
-
-.service-item{
-  background:#ffffff;
-  padding:20px 25px;
-  border-radius:14px;
-  border:2px solid #e5e7eb;
-  cursor:pointer;
-  transition:all 0.3s ease;
-  position:relative;
-  overflow:hidden;
-}
-
-.service-item::before{
-  content:"";
-  position:absolute;
-  left:0;
-  top:0;
-  height:100%;
-  width:5px;
-  background:var(--secondary);
-  transform:scaleY(0);
-  transition:0.3s ease;
-}
-
-.service-item:hover{
-  transform:translateX(6px);
-  border-color:var(--secondary);
-}
-
-.service-item.active{
-  background:var(--primary);
-  color:#ffffff;
-  border-color:var(--primary);
-  transform:translateX(12px);
-}
-
-.service-item.active::before{
-  transform:scaleY(1);
-}
-
-.service-header{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-
-.service-title{
-  font-weight:600;
-  font-size:16px;
-}
-
-.service-arrow{
-  transition:0.3s ease;
-}
-
-.service-item.active .service-arrow{
-  transform:rotate(90deg);
-}
-
-/* Right Panel */
-.services-right{
-  flex:1.2;
-}
-
-.service-display{
-  background:#ffffff;
-  padding:40px;
-  border-radius:20px;
-  box-shadow:0 20px 50px rgba(0,0,0,0.05);
-  min-height:250px;
-  transition:0.3s ease;
-}
-
-.service-display h3{
-  margin-bottom:15px;
-}
-
-.service-display p{
-  color:var(--gray);
-  line-height:1.7;
-}
-
-/* MOBILE */
-@media(max-width:900px){
-
-  .services-container{
-    flex-direction:column;
-  }
-
-  .services-right{
-    display:none; /* Hide desktop panel */
-  }
-
-  .service-content-mobile{
-    margin-top:15px;
-    padding:15px;
-    background:#f1f5f9;
-    border-radius:12px;
-    font-size:14px;
-    line-height:1.6;
-    color:#334155;
-  }
-
-}
-
-
-/* PORTFOLIO */
-.portfolio-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:25px;
-}
-
-.portfolio-item{
-  position:relative;
-  overflow:hidden;
-  border-radius:15px;
-  transition:0.3s ease;
-}
-
-.portfolio-item img{
-  width:100%;
-  height:240px;
-  object-fit:cover;
-  transition:0.4s ease;
-}
-
-/* Always visible overlay */
-.portfolio-overlay{
-  position:absolute;
-  bottom:0;
-  width:100%;
-  padding:20px;
-  color:#fff;
-  background:linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.3), transparent);
-  font-weight:500;
-  font-size:15px;
-  transition:0.3s ease;
-
-}
-
-/* Premium hover effect */
-.portfolio-item:hover{
-  transform:translateY(-8px);
-}
-
-.portfolio-item:hover img{
-  transform:scale(1.08);
-}
-
-
-.portfolio-item:hover .portfolio-overlay{
-  opacity:1;
-}
-
-/* CTA */
-.cta{
-  background:var(--primary);
-  color:#fff;
-  text-align:center;
-  padding:70px 8%;
-}
-
-/* CLIENTS SECTION */
-.clients-section{
-  padding:100px 8%;
-  background:#ffffff;
-}
-
-.clients-container{
-  max-width:1100px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:35px;
-}
-
-.client-card{
-  background:#fff;
-  padding:35px 30px;
-  border-radius:20px;
-  box-shadow:0 15px 40px rgba(0,0,0,0.05);
-  transition:0.4s ease;
-  text-align:left;
-  border:2px solid transparent;
-}
-
-.client-card:hover{
-  transform:translateY(-10px);
-  border-color:var(--secondary);
-  box-shadow:0 25px 60px rgba(0,0,0,0.08);
-}
-
-.client-logo{
-  width:120px;
-  height:70px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  margin-bottom:20px;
-  border-radius:12px;
-  padding:10px;
-}
-
-.client-logo img{
-  max-width:100%;
-  max-height:100%;
-  object-fit:contain;
-}
-
-
-.client-card h3{
-  font-size:16px;
-  margin-bottom:12px;
-  color:var(--primary);
-}
-
-.client-card p{
-  font-size:14px;
-  color:var(--gray);
-  line-height:1.7;
-}
-
-
-/* FOOTER */
-footer{
-  background:var(--dark);
-  color:#fff;
-  padding:40px 8%;
-  text-align:center;
-}
-
-/* RESPONSIVE */
-@media(max-width:900px){
-  .services-wrapper{flex-direction:column;}
-}
-
-@media(max-width:768px){
-  nav ul{
-    display:none;
-    position:absolute;
-    right:8%;
-    top:70px;
-    flex-direction:column;
-    background:#fff;
-    padding:20px;
-    box-shadow:0 10px 20px rgba(0,0,0,0.1);
-  }
-  nav ul.active{display:flex;}
-  .menu-toggle{display:block;}
-}
-</style>
+<link rel="stylesheet" href="index.css">
 </head>
 <body>
 
 <header>
   <div class="logo">
-    <img src="assets/Logo.png">
+    <img src="assets/Faith Florence-logo unit.png">
     <h2>Faith Florence</h2>
   </div>
 
@@ -664,13 +30,20 @@ footer{
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-bg" id="heroBg"></div>
-  <div class="hero-toggle" onclick="toggleHeroMode()">Switch Mode</div>
   <div class="hero-content">
     <h1>A Healthcare Growth & Branding Partner</h1>
-    <p>Helping hospitals enhance visibility, strengthen patient engagement, and build lasting brand trust through strategic marketing and creative excellence.</p>
+    <p>
+      Helping hospitals enhance visibility, strengthen patient engagement, 
+      and build lasting brand trust through strategic marketing and creative excellence.
+    </p>
+
+    <div class="hero-buttons">
+      <a href="#services" class="hero-btn primary-btn">Explore Services</a>
+      <a href="#contact" class="hero-btn secondary-btn">Let’s Connect</a>
+    </div>
   </div>
 </section>
+
 
 <section id="founders" class="founders-section">
   <div class="section-title">
@@ -682,7 +55,7 @@ footer{
 
     <div class="founder-card">
       <div class="founder-image">
-        <img src="assets/Founder.png" alt="Prasad Thamadapalli">
+        <img src="assets/Founder.jpg.jpeg" alt="Prasad Thamadapalli">
       </div>
       <h3>Prasad Thamadapalli</h3>
       <span class="founder-role">Founder & Brand Strategist</span>
@@ -695,7 +68,7 @@ footer{
 
     <div class="founder-card">
       <div class="founder-image">
-        <img src="assets/Founder.png" alt="Rechal Thamadapalli">
+        <img src="assets/Co-Founder.png" alt="Rechal Thamadapalli">
       </div>
       <h3>Rechal Thamadapalli</h3>
       <span class="founder-role">Co-Founder & CRM, Sales & Digital Marketer</span>
@@ -714,8 +87,9 @@ footer{
   <div class="about-container">
 
     <div class="about-content">
-      <span class="about-tag">About Us</span>
-      <h2>Faith Florence</h2>
+       <h2>About Us</h2>
+      <!-- <span class="about-tag">About Us</span> -->
+      <h3>Faith Florence</h3>
       <h4>A Healthcare Growth & Branding Partner</h4>
 
       <p>
@@ -817,71 +191,37 @@ footer{
 
 
 <!-- PORTFOLIO -->
-<section id="portfolio">
+<section id="portfolio" class="portfolio-section">
   <div class="section-title">
     <h2>Portfolio</h2>
   </div>
 
-  <div class="portfolio-grid">
-
-    <div class="portfolio-item">
-      <img src="assets/natho-una-apollo.jpg" alt="">
-      <div class="portfolio-overlay">
-        Naatho Unna Apollo – 37 Years Celebration
-      </div>
-    </div>
-
-    <div class="portfolio-item">
-      <img src="assets/Apollo-metro-rail-branding.avif" alt="">
-      <div class="portfolio-overlay">
-        Apollo Jubilee Hills Metro Retail Branding
-      </div>
-    </div>
-
-    <div class="portfolio-item">
-      <img src="assets/apollo-hyderguda.avif" alt="">
-      <div class="portfolio-overlay">
-        Revamp of Apollo Hospitals Hyderguda
-      </div>
-    </div>
-
-    <div class="portfolio-item">
-      <img src="assets/apollo-medical-center.jpg" alt="">
-      <div class="portfolio-overlay">
-        Apollo Medical Centre – Hyderabad Airport
-      </div>
-    </div>
-
-    <div class="portfolio-item">
-      <img src="assets/Doctors-day.jpg" alt="">
-      <div class="portfolio-overlay">
-        Doctor’s Day Celebrations
-      </div>
-    </div>
-
-    <div class="portfolio-item">
-      <img src="assets/hepatitis.jpg" alt="">
-      <div class="portfolio-overlay">
-        World Hepatitis Day 2023
-      </div>
-    </div>
-
-    <div class="portfolio-item">
-      <img src="assets/pink defenders.jpg" alt="">
-      <div class="portfolio-overlay">
-        Pink Defender Breast Cancer Awareness Walk
-      </div>
-    </div>
-
-    <div class="portfolio-item">
-      <img src="assets/Sage.jpg" alt="">
-      <div class="portfolio-overlay">
-        World Heart Day Campaign
-      </div>
-    </div>
-
-  </div>
+  <div class="portfolio-grid" id="portfolioGrid"></div>
 </section>
+
+<!-- MODAL -->
+<div class="portfolio-modal" id="portfolioModal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3 id="modalTitle"></h3>
+      <div class="modal-actions">
+        <button id="fullscreenBtn">⛶</button>
+        <button id="closeModal">✕</button>
+      </div>
+    </div>
+
+    <div class="modal-body">
+      <button class="nav-btn prev" id="prevBtn">❮</button>
+      <div class="image-stage">
+        <img id="modalImage" />
+      </div>
+      <button class="nav-btn next" id="nextBtn">❯</button>
+    </div>
+
+    <div class="thumbnail-strip" id="thumbnailStrip"></div>
+  </div>
+</div>
+
 
 <section id="clients" class="clients-section">
   <div class="section-title">
@@ -893,7 +233,7 @@ footer{
 
     <div class="client-card">
       <div class="client-logo">
-        <img src="assets/Apollo_Hospitals_Logo.svg.png" alt="Apollo Hospitals Logo">
+        <img src="assets/Clients/Apollo_Hospitals_Logo.svg.png" alt="Apollo Hospitals Logo">
       </div>
       <h3>Apollo Hospitals – Hyderabad</h3>
       <p>
@@ -904,7 +244,7 @@ footer{
 
     <div class="client-card">
       <div class="client-logo">
-        <img src="assets/Dharani-hospital.webp" alt="Dharani Hospitals Logo">
+        <img src="assets/Clients/Dharani-hospital.webp" alt="Dharani Hospitals Logo">
       </div>
       <h3>Dharani Hospitals – Sangareddy</h3>
       <p>
@@ -915,7 +255,7 @@ footer{
 
     <div class="client-card">
       <div class="client-logo">
-        <img src="assets/KK-Swara.webp" alt="KK Swara Logo">
+        <img src="assets/Clients/KK-Swara.webp" alt="KK Swara Logo">
       </div>
       <h3>KK SWARA Super Speciality – Boduppal</h3>
       <p>
@@ -926,7 +266,7 @@ footer{
 
     <div class="client-card">
       <div class="client-logo">
-        <img src="assets/Hegde-fertility.png" alt="Hegde-fertility">
+        <img src="assets/Clients/Hegde-fertility.png" alt="Hegde-fertility">
       </div>
       <h3>Hegde Fertility – Madhapur</h3>
       <p>
@@ -963,29 +303,6 @@ let images=[
 ];
 
 let current=0;
-let mode=localStorage.getItem("heroMode") || "slideshow";
-
-function setHero(){
- if(mode==="static"){
-  heroBg.style.background="linear-gradient(to right, #1E3A8A, #0EA5E9)";
- }else{
-  heroBg.style.backgroundImage=`url(${images[current]})`;
- }
-}
-setHero();
-
-setInterval(()=>{
- if(mode==="slideshow"){
-  current=(current+1)%images.length;
-  heroBg.style.backgroundImage=`url(${images[current]})`;
- }
-},4000);
-
-function toggleHeroMode(){
- mode=(mode==="slideshow")?"static":"slideshow";
- localStorage.setItem("heroMode",mode);
- location.reload();
-}
 
 /* SERVICES DATA */
 const servicesData = [
@@ -1064,6 +381,122 @@ servicesData.forEach((service,index)=>{
 
 });
 
+const portfolioData = [
+  { title:"Apollo Medical Centre – Hyderabad Airport", folder:"assets/Portfolio/Airport", count:14, ext:"jpg" },
+  { title:"World Heart Day Campaign", folder:"assets/Portfolio/Heart", count:8, ext:"jpg" },
+  { title:"Naatho Unna Apollo – 37 Years Celebration", folder:"assets/Portfolio/naatho", count:6, ext:"jpeg" },
+  { title:"Pink Defender Breast Cancer Awareness Walk", folder:"assets/Portfolio/Pink", count:3, ext:"jpeg" },
+  { title:"Apollo Jubilee Hills Metro Retail Branding", folder:"assets/Portfolio/Metro", count:3, ext:"jpeg" },
+  { title:"Revamp of Apollo Hospitals Hyderguda", folder:"assets/Portfolio/Hyderguda", count:1, ext:"avif" },
+  { title:"Doctor’s Day Celebrations", folder:"assets/Portfolio/DoctorDay", count:1, ext:"jpg" },
+  { title:"World Hepatitis Day 2023", folder:"assets/Portfolio/Hepatitis", count:1, ext:"jpeg" }
+];
+
+const grid = document.getElementById("portfolioGrid");
+const modal = document.getElementById("portfolioModal");
+const modalImage = document.getElementById("modalImage");
+const modalTitle = document.getElementById("modalTitle");
+const thumbnailStrip = document.getElementById("thumbnailStrip");
+
+let currentImages = [];
+let currentIndex = 0;
+
+/* Generate Grid */
+portfolioData.forEach(project=>{
+  const firstImage = `${project.folder}/1.${project.ext}`;
+
+  const item = document.createElement("div");
+  item.className="portfolio-item";
+  item.innerHTML = `
+    <img src="${firstImage}">
+    <div class="portfolio-overlay">${project.title}</div>
+  `;
+
+  item.onclick = ()=> openModal(project);
+  grid.appendChild(item);
+});
+
+/* Open Modal */
+function openModal(project){
+  currentImages = [];
+  for(let i=1;i<=project.count;i++){
+    currentImages.push(`${project.folder}/${i}.${project.ext}`);
+  }
+
+  modalTitle.innerText = project.title;
+  currentIndex = 0;
+  updateImage();
+  buildThumbnails();
+
+  modal.classList.add("active");
+  document.body.style.overflow="hidden";
+}
+
+/* Update Image */
+function updateImage(){
+  modalImage.style.opacity = 0;
+
+  setTimeout(()=>{
+    modalImage.src = currentImages[currentIndex];
+    modalImage.style.opacity = 1;
+  },150);
+
+  document.querySelectorAll(".thumbnail-strip img").forEach((img,i)=>{
+    img.classList.toggle("active", i===currentIndex);
+  });
+}
+
+
+/* Thumbnails */
+function buildThumbnails(){
+  thumbnailStrip.innerHTML="";
+  currentImages.forEach((src,i)=>{
+    const thumb=document.createElement("img");
+    thumb.src=src;
+    if(i===0) thumb.classList.add("active");
+    thumb.onclick=()=>{
+      currentIndex=i;
+      updateImage();
+    };
+    thumbnailStrip.appendChild(thumb);
+  });
+}
+
+/* Navigation */
+document.getElementById("prevBtn").onclick=()=>{
+  currentIndex=(currentIndex-1+currentImages.length)%currentImages.length;
+  updateImage();
+};
+
+document.getElementById("nextBtn").onclick=()=>{
+  currentIndex=(currentIndex+1)%currentImages.length;
+  updateImage();
+};
+
+/* Close */
+document.getElementById("closeModal").onclick=closeModal;
+modal.onclick=(e)=>{
+  if(e.target===modal) closeModal();
+};
+
+function closeModal(){
+  modal.classList.remove("active");
+  document.body.style.overflow="auto";
+}
+
+/* ESC */
+document.addEventListener("keydown",(e)=>{
+  if(e.key==="Escape") closeModal();
+});
+
+/* Zoom */
+modalImage.addEventListener("click",()=>{
+  if(modalImage.classList.contains("zoomed")){
+    modalImage.classList.remove("zoomed");
+  } else {
+    modalImage.classList.add("zoomed");
+  }
+});
 </script>
 
 </body>
