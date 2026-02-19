@@ -28,6 +28,9 @@ header{
   color:#ffffff;
 }
 
+nav {
+  margin-right: 16px;
+}
 nav a{
   color:#ffffff;
   font-weight:500;
@@ -40,7 +43,7 @@ nav a:hover{
 .menu-toggle{
   color:#ffffff;
   margin-left: auto;
-  margin-right: 24px;
+  margin-right: 16px;
 }
 
 
