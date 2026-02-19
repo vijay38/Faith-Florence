@@ -913,3 +913,39 @@ nav ul.active{
 .drawer-nav a:hover{
   opacity:0.8;
 }
+
+.behance-section{
+  margin:40px 8% 40px;
+  padding:50px 30px;
+  background:linear-gradient(135deg, rgba(30,58,138,0.05), rgba(14,165,233,0.05));
+  border-radius:20px;
+  text-align:center;
+}
+
+.behance-content h3{
+  margin-bottom:15px;
+  color:var(--primary);
+}
+
+.behance-content p{
+  color:var(--gray);
+  max-width:600px;
+  margin:0 auto 25px;
+  line-height:1.6;
+}
+
+.behance-btn{
+  display:inline-block;
+  padding:12px 28px;
+  border-radius:30px;
+  background:var(--primary);
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+  transition:0.3s ease;
+}
+
+.behance-btn:hover{
+  background:var(--secondary);
+  transform:translateY(-3px);
+}
