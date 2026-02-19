@@ -16,7 +16,8 @@
     <h2>Faith Florence</h2>
   </div>
 
-  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+  <div class="menu-toggle" onclick="openDrawer()">☰</div>
+
 
   <nav>
     <ul id="navLinks">
@@ -27,6 +28,22 @@
     </ul>
   </nav>
 </header>
+
+<div class="mobile-drawer" id="mobileDrawer">
+  <div class="drawer-panel">
+    <div class="drawer-header">
+      <h3>Menu</h3>
+      <button onclick="closeDrawer()">✕</button>
+    </div>
+
+    <nav class="drawer-nav">
+      <a href="#about" onclick="closeDrawer()">About</a>
+      <a href="#services" onclick="closeDrawer()">Services</a>
+      <a href="#portfolio" onclick="closeDrawer()">Portfolio</a>
+      <a href="#contact" onclick="closeDrawer()">Contact</a>
+    </nav>
+  </div>
+</div>
 
 <!-- HERO -->
 <section class="hero">
@@ -387,10 +404,13 @@ const portfolioData = [
   { title:"Naatho Unna Apollo – 37 Years Celebration", folder:"assets/Portfolio/Naatho", count:6, ext:"jpeg" },
   { title:"Pink Defender Breast Cancer Awareness Walk", folder:"assets/Portfolio/Pink", count:3, ext:"jpeg" },
   { title:"Apollo Jubilee Hills Metro Retail Branding", folder:"assets/Portfolio/Metro", count:3, ext:"jpeg" },
-  { title:"Revamp of Apollo Hospitals Hyderguda", folder:"assets/Portfolio/Hyderguda", count:1, ext:"avif" },
-  { title:"Doctor’s Day Celebrations", folder:"assets/Portfolio/DoctorDay", count:1, ext:"jpg" },
   { title:"World Hepatitis Day 2023", folder:"assets/Portfolio/Hepatitis", count:1, ext:"jpeg" }
 ];
+
+const skippedPortfolio = [
+    { title:"Revamp of Apollo Hospitals Hyderguda", folder:"assets/Portfolio/Hyderguda", count:1, ext:"avif" },
+  { title:"Doctor’s Day Celebrations", folder:"assets/Portfolio/DoctorDay", count:1, ext:"jpg" },
+]
 
 const grid = document.getElementById("portfolioGrid");
 const modal = document.getElementById("portfolioModal");
@@ -497,7 +517,33 @@ modalImage.addEventListener("click",()=>{
     modalImage.classList.add("zoomed");
   }
 });
-</script>
+const drawer = document.getElementById("mobileDrawer");
 
+function openDrawer(){
+  drawer.classList.add("active");
+  document.body.style.overflow = "hidden";
+}
+
+function closeDrawer(){
+  drawer.classList.remove("active");
+  document.body.style.overflow = "auto";
+}
+
+/* Close when clicking outside panel */
+drawer.addEventListener("click", function(e){
+  if(e.target === drawer){
+    closeDrawer();
+  }
+});
+
+/* ESC key support */
+document.addEventListener("keydown", function(e){
+  if(e.key === "Escape"){
+    closeDrawer();
+  }
+});
+
+
+</script>
 </body>
 </html>

@@ -13,9 +13,9 @@ body{background:var(--light);color:var(--dark);scroll-behavior:smooth}
 header{
   position:sticky;
   top:0;
-  padding:15px 8%;
+  padding: 8px 8px 8px 24px;
   display:flex;
-  justify-content:space-between;
+  justify-content: space-between;
   align-items:center;
   z-index:1000;
 
@@ -39,6 +39,8 @@ nav a:hover{
 
 .menu-toggle{
   color:#ffffff;
+  margin-left: auto;
+  margin-right: 24px;
 }
 
 
@@ -806,13 +808,105 @@ footer{
   nav ul{
     display:none;
     position:absolute;
-    right:8%;
-    top:70px;
+    right:18px;
+    top:68px;
     flex-direction:column;
-    background:#fff;
-    padding:20px;
-    box-shadow:0 10px 20px rgba(0,0,0,0.1);
+    background:rgba(30,58,138,0.95);
+    backdrop-filter:blur(10px);
+    padding:20px 25px;
+    border-radius:16px;
+    box-shadow:0 20px 40px rgba(0,0,0,0.2);
+    min-width:220px;
   }
-  nav ul.active{display:flex;}
+  nav ul{
+  transform:translateY(-10px);
+  opacity:0;
+  transition:0.3s ease;
+}
+
+nav ul.active{
+  display:flex;
+  transform:translateY(0);
+  opacity:1;
+}
   .menu-toggle{display:block;}
+}
+
+/* Overlay container */
+.mobile-drawer{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.4);
+  backdrop-filter:blur(4px);
+  opacity:0;
+  visibility:hidden;
+  transition:opacity 0.3s ease;
+  z-index:9999;
+  display:flex;
+  justify-content:flex-end; /* Important */
+}
+
+/* Active state */
+.mobile-drawer.active{
+  opacity:1;
+  visibility:visible;
+}
+
+/* Right panel */
+.drawer-panel{
+  width:80%;
+  max-width:320px;
+  height:100%;
+  background:linear-gradient(135deg, var(--primary), var(--secondary));
+  color:#fff;
+  padding:30px 25px;
+  transform:translateX(100%); /* Start off-screen */
+  transition:transform 0.4s ease;
+  box-shadow:-10px 0 40px rgba(0,0,0,0.2);
+  display:flex;
+  flex-direction:column;
+}
+
+/* Slide in */
+.mobile-drawer.active .drawer-panel{
+  transform:translateX(0);
+}
+
+/* Header */
+.drawer-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:40px;
+}
+
+.drawer-header h3{
+  font-size:18px;
+}
+
+.drawer-header button{
+  background:none;
+  border:none;
+  color:#fff;
+  font-size:22px;
+  cursor:pointer;
+}
+
+/* Nav links */
+.drawer-nav{
+  display:flex;
+  flex-direction:column;
+  gap:25px;
+}
+
+.drawer-nav a{
+  text-decoration:none;
+  color:#fff;
+  font-size:16px;
+  font-weight:500;
+  transition:0.3s;
+}
+
+.drawer-nav a:hover{
+  opacity:0.8;
 }
