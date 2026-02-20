@@ -1,9 +1,10 @@
 :root{
-  --primary:#1E3A8A;
-  --secondary:#0EA5E9;
-  --dark:#0f172a;
-  --light:#f8fafc;
-  --gray:#64748b;
+  --primary:#17231b;      /* Deep brand green */
+  --secondary:#f6b817;    /* Brand gold */
+  --accent:#d49f12;       /* Darker gold for hover states */
+  --light:#fdf8e3;        /* Soft background highlight */
+  --dark:#111827;         /* Rich text color */
+  --gray:#6b7280;         /* Secondary text */
 }
 
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
@@ -28,14 +29,14 @@ body{background:var(--light);color:var(--dark);scroll-behavior:smooth}
   display:flex;
   gap:35px;
   margin-right: auto;
-  margin-left: 48px;
+  margin-left: 20%;
 }
 
 .nav-right{
   display:flex;
   gap:35px;
   margin-left: auto;
-  margin-right: 48px;;
+  margin-right: 20%;;
 }
 
 .nav-left a,
@@ -66,6 +67,9 @@ body{background:var(--light);color:var(--dark);scroll-behavior:smooth}
 
 @media(max-width:900px){
 
+  .main-header{
+    padding:18px 6%;
+  }
   .nav-left,
   .nav-right{
     display:none;
@@ -80,7 +84,7 @@ body{background:var(--light);color:var(--dark);scroll-behavior:smooth}
   }
 
   .nav-center img{
-    height:55px;
+    height:100px;
   }
 }
 
@@ -135,7 +139,7 @@ body{background:var(--light);color:var(--dark);scroll-behavior:smooth}
 
 .primary-btn{
   background:#ffffff;
-  color:var(--primary);
+  color:#17231b;
 }
 
 .primary-btn:hover{
@@ -347,7 +351,8 @@ body{background:var(--light);color:var(--dark);scroll-behavior:smooth}
   width:212px;
   height:212px;
   border-radius:50%;
-  background:linear-gradient(135deg, var(--primary), var(--secondary));
+  background:#e8c35a;
+  box-shadow:0 10px 25px rgba(246,184,23,0.3);
   z-index:1;
 }
 
@@ -728,8 +733,8 @@ section{padding:80px 8%;}
 
 /* CTA */
 .cta{
-  background:var(--primary);
-  color:#fff;
+  background:#f6b817;
+  color:#000;
   text-align:center;
   padding:70px 8%;
 }
@@ -797,7 +802,7 @@ section{padding:80px 8%;}
 
 /* FOOTER */
 footer{
-  background:var(--dark);
+  background:#17231b;
   color:#fff;
   padding:40px 8%;
   text-align:center;
