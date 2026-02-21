@@ -62,9 +62,12 @@ body{background:var(--light);color:var(--dark);scroll-behavior:smooth}
 }
 
 .nav-center img{
-  height:110px; /* Adjust based on design */
+  height:160px; /* Adjust based on design */
 }
 
+.menu-toggle{
+  display:none;
+}
 @media(max-width:900px){
 
   .main-header{
@@ -105,6 +108,9 @@ body{background:var(--light);color:var(--dark);scroll-behavior:smooth}
 /* Content Wrapper */
 .hero-content{
   max-width:850px;
+      display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* Headline */
@@ -838,7 +844,7 @@ nav ul.active{
   transform:translateY(0);
   opacity:1;
 }
-  .menu-toggle{display:block;}
+  /* .menu-toggle{display:block;} */
 }
 
 /* Overlay container */
