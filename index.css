@@ -7,7 +7,7 @@
   --gray:#6b7280;         /* Secondary text */
 }
 
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Montserrat', 'Poppins', sans-serif;}
 body{background:var(--light);color:var(--dark);scroll-behavior:smooth}
 
 /* HEADER */
