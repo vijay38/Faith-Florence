@@ -227,27 +227,27 @@
 
 
 <!-- PORTFOLIO -->
-<section id="portfolio" class="portfolio-section" >
+<!-- <section id="portfolio" class="portfolio-section" >
   <div class="section-title" style="display: none !important;">
     <h2>Portfolio</h2>
-  </div>
+  </div> -->
 
   <!-- <div class="portfolio-grid" id="portfolioGrid"></div> -->
-   <div class="behance-section">
-  <div class="behance-content">
-    <h3>Explore Our Broader Creative Work</h3>
-    <p>
-      While our website showcases healthcare-focused projects,
-      you can explore our wider creative executions across industries on Behance.
-    </p>
 
-    <a href="https://www.behance.net/flostudfaithfl" target="_blank" class="behance-btn">
-      View Creative Portfolio on Behance →
-    </a>
-  </div>
-</div>
 </section>
+   <div id="portfolio" class="behance-section">
+    <div class="behance-content">
+      <h3>Explore Our Broader Creative Work</h3>
+      <p>
+        While our website showcases healthcare-focused projects,
+        you can explore our wider creative executions across industries on Behance.
+      </p>
 
+      <a href="https://www.behance.net/flostudfaithfl" target="_blank" class="behance-btn">
+        View Creative Portfolio on Behance →
+      </a>
+    </div>
+  </div>
 
 
 
@@ -557,14 +557,16 @@ modalImage.addEventListener("click",()=>{
     modalImage.classList.add("zoomed");
   }
 });
-const drawer = document.getElementById("mobileDrawer");
+
 
 function openDrawer(){
+  const drawer = document.getElementById("mobileDrawer");
   drawer.classList.add("active");
   document.body.style.overflow = "hidden";
 }
 
 function closeDrawer(){
+  const drawer = document.getElementById("mobileDrawer");
   drawer.classList.remove("active");
   document.body.style.overflow = "auto";
 }

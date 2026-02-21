@@ -844,7 +844,7 @@ nav ul.active{
   transform:translateY(0);
   opacity:1;
 }
-  /* .menu-toggle{display:block;} */
+  .menu-toggle{display:block;}
 }
 
 /* Overlay container */
